@@ -14,7 +14,6 @@ Official version history and development changelog for Old Net X Migrator.
 4. Prevented duplicate notifications within the same browser session.
 5. Preserved the **Don't show again** option.
 6. Allowed **Remind me later** to re-enable startup notifications.
-7. Preserved the existing NPAPI WebView2 bridge and navigation system.
 
 ---
 
@@ -29,7 +28,6 @@ Official version history and development changelog for Old Net X Migrator.
 5. Removed navigation to the temporary `oldnetx.lv` placeholder to prevent users from opening an unavailable download page.
 6. Preserved the fully functional Mozilla Firefox download link, directing users to Mozilla's official website.
 7. Updated the first-run notification for version 3.3.1.0, ensuring the revised Alpha development notice appears after installation and browser restart.
-8. Preserved the existing NPAPI WebView2 bridge, browser navigation functionality, original icons, and classic Netscape interface integration.
 
 ---
 
@@ -44,7 +42,6 @@ Official version history and development changelog for Old Net X Migrator.
 5. Replaced the default Add-ons icon with the original Old Net X icon.
 6. Replaced the Netscape icon in the Migrator window with the original Old Net X icon.
 7. Integrated original 32×32 and 64×64 icon resources to improve visual quality.
-8. Preserved the existing WebView2 navigation bridge.
 
 ---
 
@@ -58,7 +55,6 @@ Official version history and development changelog for Old Net X Migrator.
 4. Improved automatic NPAPI plugin initialization within newly opened tabs.
 5. Added error handling when WebView2 cannot initialize successfully.
 6. Updated the Migrator window's title-bar behavior.
-7. Preserved the existing address-bar and browser navigation functionality.
 
 ---
 
@@ -71,7 +67,6 @@ Official version history and development changelog for Old Net X Migrator.
 3. Improved the Old Net X logo's resolution and appearance.
 4. Updated the red exclamation-mark icon in the browser's status bar to better match the original Netscape design.
 5. Improved the appearance and proportions of the *End of Support* dialog.
-6. Preserved the integrated NPAPI WebView2 bridge.
 
 > **Development note:** The new-tab implementation introduced an empty-tab issue that was subsequently addressed in v3.2.0.0.
 
