@@ -1,0 +1,12 @@
+{
+  "format": 1,
+  "addonId": "oldnetx-webview2-overlay@propc.lv",
+  "channel": "stable",
+  "version": "4.0.0.0",
+  "xpiUrl": "https://github.com/Lukass2025/OldNetXMigrator/releases/download/v4.0.0.0/OldNetXMigrator-v4.0.0.0.xpi",
+  "sha256": "68d0d7f21686a4bd1352f2c9f0e7f348660e9e25e774981c12f4d92c3ebe8d00",
+  "sizeBytes": 32201448,
+  "issuedUtc": "2026-10-27T10:50:22Z",
+  "expiresUtc": "2026-11-26T10:51:22Z",
+  "targetAppId": "{3db10fab-e461-4c80-8b97-957ad5f8ea47}"
+}
