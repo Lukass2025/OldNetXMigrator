@@ -7,6 +7,20 @@ Old Net X Migrator is an independent preservation and development project for **
 > [!WARNING]
 > **Netscape Navigator 9 is obsolete and is not a secure modern browser.** Old Net X Migrator does not patch Netscape, modernize its entire engine, or make it safe for sensitive accounts, payments, or everyday browsing. Use the project in an isolated test environment and at your own risk.
 
+## Screenshots
+
+### Classic end-of-support notice
+
+![Old Net X Migrator's custom end-of-support notice](docs/images/migration-notice.png)
+
+*Old Net X Migrator displays its own classic-style notice inside Netscape Navigator 9. This is not an official Netscape or AOL notice.*
+
+### Original Netscape Add-ons Manager
+
+![Old Net X Migrator v4.0.0.0 installed in the Netscape Add-ons Manager](docs/images/addons-manager.png)
+
+*Old Net X Migrator v4.0.0.0 installed in Netscape Navigator 9, with the familiar Find Updates command.*
+
 ## Project at a glance
 
 | | |
@@ -36,6 +50,10 @@ The extension bundles a 32-bit NPAPI integration component that can display sele
 
 This is an **experimental compatibility bridge**, not a replacement for Netscape's underlying browser engine. Website behavior, audio/video, fullscreen, and navigation may vary; compatibility with every website is **not** guaranteed. WebView2 does not remove vulnerabilities elsewhere in the legacy browser or its plugin architecture.
 
+![A modern Google page displayed through the experimental WebView2 bridge in Netscape Navigator 9](docs/images/webview2-bridge.png)
+
+*Modern web content rendered through the experimental NPAPI-to-WebView2 bridge. The legacy Gecko engine itself has not been updated or secured.*
+
 ### 3. Signed extension updates
 
 Starting with the v3.4.x development work and completed for the v4.0.0.0 release, Old Net X Migrator uses an integrated, self-contained Windows update companion rather than an unsigned legacy update feed.
@@ -45,6 +63,10 @@ Starting with the v3.4.x development work and completed for the v4.0.0.0 release
 3. It checks the available version. If no newer version exists, **No updates were found** is reported without downloading an XPI.
 4. If a newer version exists, it downloads the candidate and verifies its integrity, extension identity, compatibility, and package structure before offering it for installation.
 5. Netscape's **Updates → Install Updates → Restart Navigator** flow remains under the user's control.
+
+![Old Net X Migrator v3.4.2.4 detecting an available v4.0.0.0 update in the Netscape Add-ons Manager](docs/images/update-available.png)
+
+*Historical QA example: v3.4.2.4 detects the newer v4.0.0.0 release using Netscape's native update interface. The screenshot illustrates the user interface, not the cryptographic verification itself.*
 
 Security checks include **RSA-PSS/SHA-256 manifest signatures**, publisher public-key pinning, HTTPS certificate validation, XPI SHA-256 checks, and archive validation. No update should be installed without successful verification and user confirmation. The bundled .NET 10 companion is self-contained; installing the .NET Runtime separately is not required for the distributed update component.
 
@@ -56,7 +78,7 @@ Security checks include **RSA-PSS/SHA-256 manifest signatures**, publisher publi
 4. Restart Netscape when prompted, then check **Tools → Add-ons → Extensions** for Old Net X Migrator.
 5. If you choose to test updates, use **Find Updates** and confirm installation through Netscape's own interface.
 
-Previous release packages are retained for development history. They may have different update capabilities or installation requirements. See the release notes for the specific version you use.
+Previous versions are documented in the changelog for historical reference. Older installation packages may no longer be available due to known issues or security concerns. See the release notes for the specific version you use.
 
 ## Known limitations and important distinctions
 
@@ -79,7 +101,7 @@ Use [GitHub Issues](https://github.com/Lukass2025/OldNetXMigrator/issues) for re
 
 This public repository is for project information, release history, distribution, and issue tracking. **It is not an open-source code repository.** The downloadable XPI may contain scripts and resources needed for the extension to run; their presence does not imply permission to reuse or redistribute them.
 
-The project's software is proprietary. See [LICENSE.md](LICENSE.md) for the intended binary-use terms once those terms have been approved and published by the copyright holder. Third-party software and trademarks remain subject to their respective rights.
+The project's software is proprietary. See [LICENSE.md](LICENSE.md) for the applicable end-user license terms. Third-party software and trademarks remain subject to their respective rights.
 
 ---
 
