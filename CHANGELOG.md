@@ -1,6 +1,159 @@
 # Old Net X Migrator — Version History
 
-Official version history and development changelog for Old Net X Migrator.
+Official version history and documented development milestones for Old Net X Migrator.
+
+> **Release status:** Only versions listed under [GitHub Releases](https://github.com/Lukass2025/OldNetXMigrator/releases) are published releases. Some intermediate v3.4.x versions below were internal/QA test builds and were not separately published. Version numbers alone do not imply public availability.
+
+---
+
+## v4.0.0.0 — Secure Updates & Native Netscape Integration
+
+**Public release — 27 October 2026.**
+
+### Changes
+
+1. Completed the security-focused updater architecture developed through the v3.4.x series.
+2. Integrated **Find Updates → Updates → Install Updates → Restart Navigator** into Netscape's native Add-ons Manager flow.
+3. Restored the classic Updates list, available-version display, and **Include this update** checkbox.
+4. Improved performance by checking an authenticated version manifest before downloading any extension package.
+5. Improved update-status reporting; clearer progress messaging during the download phase remained a focus for follow-up development.
+6. Bundled a self-contained **.NET 10 Secure Update Bridge**; a separate .NET Runtime installation is not required for the distributed companion.
+7. Preserved HTTPS certificate validation, pinned publisher public-key verification, **RSA-PSS/SHA-256 manifest signatures**, XPI SHA-256 integrity checks, and archive/package validation.
+8. Avoided unnecessary XPI downloads when the installed version was already current; allowed only verified packages to be reused from cache.
+9. Corrected the **No updates were found** result when no newer version is available.
+10. Prevented a temporary Windows console window from appearing during update checks.
+11. Preserved the classic migration notice, Mozilla Firefox link, Old Net X **Coming soon** notice, and existing extension functionality.
+12. Prepared continued distribution and update testing through GitHub Releases.
+
+> **Development note:** v4.0.0.0 carries forward the behavior tested in v3.4.2.4, without unrelated interface changes. Signed update verification does **not** make the legacy Netscape browser itself secure.
+
+---
+
+## v3.4.2.4 — Silent Update Checker Window Fix
+
+**Development/test build; no separate public GitHub Release recorded.**
+
+### Changes
+
+1. Removed the brief black Windows console window that could appear during signed update checks.
+2. Preserved the fast version-check path and native Netscape Add-ons update interface.
+3. Retained the existing publisher-signature, HTTPS, SHA-256, and package-validation requirements.
+
+---
+
+## v3.4.2.3 — Faster Signed Update Discovery
+
+**Development/test build; no separate public GitHub Release recorded.**
+
+### Changes
+
+1. Split initial signed version discovery from downloading and verifying a complete XPI.
+2. Made **No updates were found** appear promptly when there is no newer version.
+3. Deferred the more expensive package download and validation until a newer signed version had been detected.
+4. Kept all required authenticity and integrity checks before an update could be installed.
+
+---
+
+## v3.4.2.2 — Integrated Update Workflow Test
+
+**GitHub pre-release.**
+
+### Changes
+
+1. Continued testing of the integrated native Netscape Add-ons Manager update flow.
+2. Used a signed update manifest and a verified XPI candidate for update installation testing.
+3. Confirmed the restart-based extension update workflow during local testing.
+
+> **Historical note:** The published release description identifies v3.4.2.2 as a test of **Find Updates**. This entry records development context; it should not be treated as a separately certified stable build.
+
+---
+
+## v3.4.2.1 — Native Find Updates Compatibility Fix
+
+**Development/QA build.**
+
+### Changes
+
+1. Intercepted Netscape's original **Find Updates** command before the legacy RDF updater ran.
+2. Improved delayed XUL initialization and inline update-status recovery.
+3. Retained the native installation action only for verified newer packages.
+4. Preserved RSA-PSS/SHA-256 signature and package-integrity verification.
+
+---
+
+## v3.4.2.0 — Native Add-ons Update Integration
+
+**Development/QA pre-release build.**
+
+### Changes
+
+1. Improved presentation of authenticated update results inside Netscape's Add-ons Manager.
+2. Reduced duplicate pop-ups and legacy update-check errors.
+3. Introduced handling for an installation request involving a publisher-verified XPI.
+4. Preserved user confirmation and security checks.
+
+> **Development note:** The complete Netscape-native experience was still under live testing at this stage.
+
+---
+
+## v3.4.1.1 — Find Updates Integration Fix
+
+**Development/QA build.**
+
+### Changes
+
+1. Improved detection of Netscape's **Find Updates** command, including legacy XUL button events and `cmd_update` variations.
+2. Reduced duplicate checks when a click generated multiple related events.
+3. Preserved the previously implemented signed update-verification model.
+
+---
+
+## v3.4.1.0 — Signed Update System & Netscape Integration
+
+**GitHub pre-release.**
+
+### Changes
+
+1. Introduced a .NET 10 Secure Bridge for modern HTTPS update retrieval.
+2. Added RSA-PSS/SHA-256 signature verification and publisher public-key pinning.
+3. Added XPI integrity, version, compatibility, and archive-safety validation.
+4. Added **Tools → Old Net X Migrator** update-checker and diagnostic commands.
+5. Began integration with Netscape's built-in **Find Updates** functionality.
+6. Recorded 17 security tests, 7 archive-safety tests, and 7 signature-rejection tests in the development release notes.
+
+> **Development note:** The complete native installation workflow had not yet been fully validated.
+
+---
+
+## v3.4.0.1–v3.4.0.4 — Local Update & HTTPS Navigation Tests
+
+**Private/local QA builds — not public GitHub Releases.**
+
+### Development milestones
+
+1. Tested Netscape's original Add-ons update workflow with a loopback-only local RDF server, including the v3.4.0.0 → v3.4.0.1 → v3.4.0.2 test sequence.
+2. Confirmed that an already current local version returns **No updates were found**.
+3. In v3.4.0.3, explicitly blocked user-entered HTTP addresses from being passed into the HTTPS-only WebView2 integration while preserving normal HTTPS navigation.
+4. In v3.4.0.4, added local negative-path tests involving unavailable, incomplete, or incorrectly hashed update packages.
+
+> **Historical note:** These isolated localhost experiments were development tools, **not** the public update mechanism. The final signed HTTPS architecture was introduced in subsequent versions.
+
+---
+
+## v3.4.0.0 — Secure Update Architecture Transition
+
+**GitHub pre-release — documentation/development milestone; no public XPI installer was provided for this tag.**
+
+### Changes
+
+1. Began the transition toward independently authenticated extension updates.
+2. Removed the experimental unsecured localhost HTTP update endpoint and its associated configuration.
+3. Removed the unsigned legacy `update.rdf` approach from the release candidate.
+4. Updated extension identification and version metadata.
+5. Refined compatibility declarations for Netscape Navigator 9.0.0.6.
+6. Removed the unverified Firefox 2 compatibility declaration.
+7. Updated migration-interface text and removed obsolete development instructions.
+8. Preserved the established classic migration and integrated browser features.
 
 ---
 
